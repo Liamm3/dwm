@@ -1,0 +1,5 @@
+- fontawesome
+- slstatus
+- dmenu
+- librewolf
+- alacritty
