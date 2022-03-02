@@ -74,20 +74,7 @@ static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *keepasscmd[]  = { "keepass", NULL };
 
-void shiftview(const Arg *arg) {
-	Arg shifted;
-
-	if(arg->i > 0) // left circular shift
-		shifted.ui = (selmon->tagset[selmon->seltags] << arg->i)
-		   | (selmon->tagset[selmon->seltags] >> (LENGTH(tags) - arg->i));
-
-	else // right circular shift
-		shifted.ui = selmon->tagset[selmon->seltags] >> (- arg->i)
-		   | selmon->tagset[selmon->seltags] << (LENGTH(tags) + arg->i);
-
-	view(&shifted);
-}
-
+#include "shiftview.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
