@@ -39,6 +39,13 @@ static const Rule rules[] = {
 	{ "chromium",  		NULL,       	NULL,       1 << 8,       0,           -1 },
 };
 
+static const char *const autostart[] = {
+    "/home/liam/repos/dwm-xsetroot-status/statusbar.sh", NULL,
+    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/1_purple.jpg", "/home/liam/Images/Wallpapers/2_purple.jpg", NULL,
+    "alacritty", "-e", "cmus", NULL,
+	NULL /* terminate */
+};
+
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
