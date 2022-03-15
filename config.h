@@ -52,7 +52,7 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
+ 	{ "[\\]",     dwindle },
 };
 
 /* key definitions */
@@ -73,6 +73,10 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *keepasscmd[]  = { "keepass", NULL };
+static const char *cmuscmd[]  = { "alacritty", "-e", "cmus" };
+static const char *btmcmd[]  = { "alacritty", "-e", "btm" };
+static const char *nvimcmd[]  = { "alacritty", "-e", "nvim" };
+static const char *telegramcmd[]  = { "telegram-desktop", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -82,6 +86,10 @@ static Key keys[] = {
 	{ MODKEY,		                XK_w, 	   spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,		        XK_l, 	   spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,		        XK_k, 	   spawn,          {.v = keepasscmd } },
+	{ MODKEY|ShiftMask,		        XK_h, 	   spawn,          {.v = btmcmd } },
+	{ MODKEY|ShiftMask,		        XK_m, 	   spawn,          {.v = cmuscmd } },
+	{ MODKEY,       		        XK_e, 	   spawn,          {.v = nvimcmd } },
+	{ MODKEY|ShiftMask,       		XK_t, 	   spawn,          {.v = telegramcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
