@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 8;        /* gaps between windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -84,6 +84,8 @@ static const char *cmuscmd[]  = { "alacritty", "-e", "cmus" };
 static const char *btmcmd[]  = { "alacritty", "-e", "btm" };
 static const char *nvimcmd[]  = { "alacritty", "-e", "nvim" };
 static const char *telegramcmd[]  = { "telegram-desktop", NULL };
+static const char *screenshotdesktopcmd[]  = { "scrot", "/home/liam/Images/Screenshots/desktop.png", NULL };
+static const char *screenshotareacmd[]  = { "scrot", "-s", "/home/liam/Images/Screenshots/area.png", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -97,6 +99,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		        XK_m, 	   spawn,          {.v = cmuscmd } },
 	{ MODKEY,       		        XK_e, 	   spawn,          {.v = nvimcmd } },
 	{ MODKEY|ShiftMask,       		XK_t, 	   spawn,          {.v = telegramcmd } },
+	{ MODKEY,               		XK_s, 	   spawn,          {.v = screenshotdesktopcmd } },
+	{ MODKEY|ShiftMask,       		XK_s, 	   spawn,          {.v = screenshotareacmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
