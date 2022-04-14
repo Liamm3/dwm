@@ -39,11 +39,9 @@ static const Rule rules[] = {
 };
 
 static const char *const autostart[] = {
-    "/home/liam/repos/dwm-xsetroot-status/statusbar.sh", NULL,
-    "/usr/bin/dropbox", NULL,
-    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/1_purple.jpg", "/home/liam/Images/Wallpapers/2_purple.jpg", NULL,
-    "alacritty", "-e", "cmus", NULL,
-	NULL /* terminate */
+    "slstatus", NULL,
+    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/purple_1.jpg", NULL,
+    NULL /* terminate */
 };
 
 /* layout(s) */
