@@ -34,13 +34,13 @@ static const Rule rules[] = {
 	/* class      		instance	title       tags mask     isfloating   monitor */
 	{ "Gimp",     		NULL,       	NULL,       0,            1,           -1 },
 	{ "thunderbird",  	NULL,       	NULL,       1 << 3,       0,           -1 },
-	{ "telegram-desktop",  	NULL,       	NULL,       1 << 5,       0,           -1 },
-	{ "Spotify",  		NULL,  		NULL,       1 << 7,       0,           -1 },
+	{ "Spotify",  		NULL,  		    NULL,       1 << 7,       0,           -1 },
 	{ "chromium",  		NULL,       	NULL,       1 << 8,       0,           -1 },
 };
 
 static const char *const autostart[] = {
     "/home/liam/repos/dwm-xsetroot-status/statusbar.sh", NULL,
+    "/usr/bin/dropbox", NULL,
     "feh", "--bg-fill", "/home/liam/Images/Wallpapers/1_purple.jpg", "/home/liam/Images/Wallpapers/2_purple.jpg", NULL,
     "alacritty", "-e", "cmus", NULL,
 	NULL /* terminate */
@@ -127,6 +127,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0}   },
 	{ MODKEY,		                XK_n,  	   shiftview,      {.i = +1  } },
 	{ MODKEY,		                XK_b,  	   shiftview,      {.i = -1  } },
 	TAGKEYS(                        XK_1,                      0)
