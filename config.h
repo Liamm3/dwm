@@ -40,9 +40,9 @@ static const Rule rules[] = {
 
 static const char *const autostart[] = {
     "/home/liam/repos/dwm-xsetroot-status/statusbar.sh", NULL,
-    "/usr/bin/dropbox", NULL,
     "feh", "--bg-fill", "/home/liam/Images/Wallpapers/1_purple.jpg", "/home/liam/Images/Wallpapers/2_purple.jpg", NULL,
     "alacritty", "-e", "cmus", NULL,
+    "dropbox", NULL,
 	NULL /* terminate */
 };
 
@@ -79,7 +79,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
-static const char *keepasscmd[]  = { "keepass", NULL };
+static const char *keepasscmd[]  = { "keepassxc", "/home/liam/Dropbox/blowfish.kdbx", NULL };
 static const char *cmuscmd[]  = { "alacritty", "-e", "cmus" };
 static const char *btmcmd[]  = { "alacritty", "-e", "btm" };
 static const char *nvimcmd[]  = { "alacritty", "-e", "nvim" };
