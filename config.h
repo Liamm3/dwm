@@ -40,6 +40,7 @@ static const Rule rules[] = {
 
 static const char *const autostart[] = {
     "slstatus", NULL,
+    "/usr/bin/dropbox", NULL,
     "feh", "--bg-fill", "/home/liam/Images/Wallpapers/purple_1.jpg", NULL,
     NULL /* terminate */
 };
@@ -75,9 +76,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
+static const char *tmuxcmd[]  = { "alacritty", "-e", "tmux" };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
-static const char *keepasscmd[]  = { "keepass", NULL };
+static const char *keepasscmd[]  = { "keepassxc", "/home/liam/Dropbox/blowfish.kdbx", NULL };
 static const char *cmuscmd[]  = { "alacritty", "-e", "cmus" };
 static const char *btmcmd[]  = { "alacritty", "-e", "btm" };
 static const char *nvimcmd[]  = { "alacritty", "-e", "nvim" };
@@ -90,6 +92,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,		                XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,		        XK_Return, spawn,          {.v = tmuxcmd } },
 	{ MODKEY,		                XK_w, 	   spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,		        XK_l, 	   spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,		        XK_k, 	   spawn,          {.v = keepasscmd } },
