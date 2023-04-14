@@ -42,6 +42,9 @@ static const char *const autostart[] = {
     "/home/liam/repos/dwm-xsetroot-status/statusbar.sh", NULL,
     "feh", "--bg-fill", "/home/liam/Images/Wallpapers/1_purple.jpg", "/home/liam/Images/Wallpapers/2_purple.jpg", NULL,
     "alacritty", "-e", "cmus", NULL,
+    "keepassxc", NULL,
+    "thunderbird", NULL,
+    "librewolf", NULL,
     "dropbox", NULL,
 	NULL /* terminate */
 };
