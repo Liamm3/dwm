@@ -16,7 +16,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#b75cbb";
+static const char col_cyan[]        = "#fa8d52";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -40,8 +40,9 @@ static const Rule rules[] = {
 
 static const char *const autostart[] = {
     "slstatus", NULL,
+    "otd", NULL,
     "/usr/bin/dropbox", NULL,
-    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/purple_1.jpg", NULL,
+    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/yellow_1.jpg", NULL,
     NULL /* terminate */
 };
 
@@ -80,12 +81,13 @@ static const char *tmuxcmd[]  = { "alacritty", "-e", "tmux" };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *slockcmd[]  = { "slock", NULL };
 static const char *keepasscmd[]  = { "keepassxc", "/home/liam/Dropbox/blowfish.kdbx", NULL };
-static const char *cmuscmd[]  = { "alacritty", "-e", "cmus" };
 static const char *btmcmd[]  = { "alacritty", "-e", "btm" };
 static const char *nvimcmd[]  = { "alacritty", "-e", "nvim" };
+static const char *thunarcmd[]  = { "thunar", NULL };
 static const char *telegramcmd[]  = { "telegram-desktop", NULL };
 static const char *screenshotdesktopcmd[]  = { "scrot", "/home/liam/Images/Screenshots/desktop.png", NULL };
 static const char *screenshotareacmd[]  = { "scrot", "-s", "/home/liam/Images/Screenshots/area.png", NULL };
+static const char *dropboxcmd[]  = { "alacritty", "-e", "cd", "/home/liam/Dropbox/", NULL };
 
 #include "shiftview.c"
 static Key keys[] = {
@@ -97,11 +99,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		        XK_l, 	   spawn,          {.v = slockcmd } },
 	{ MODKEY|ShiftMask,		        XK_k, 	   spawn,          {.v = keepasscmd } },
 	{ MODKEY|ShiftMask,		        XK_h, 	   spawn,          {.v = btmcmd } },
-	{ MODKEY|ShiftMask,		        XK_m, 	   spawn,          {.v = cmuscmd } },
-	{ MODKEY,       		        XK_e, 	   spawn,          {.v = nvimcmd } },
+	{ MODKEY,       		        XK_e, 	   spawn,          {.v = thunarcmd } },
+	{ MODKEY|ShiftMask,       		XK_e, 	   spawn,          {.v = nvimcmd } },
 	{ MODKEY|ShiftMask,       		XK_t, 	   spawn,          {.v = telegramcmd } },
 	{ MODKEY,               		XK_s, 	   spawn,          {.v = screenshotdesktopcmd } },
 	{ MODKEY|ShiftMask,       		XK_s, 	   spawn,          {.v = screenshotareacmd } },
+	{ MODKEY|ShiftMask,       		XK_d, 	   spawn,          {.v = dropboxcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
