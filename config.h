@@ -16,7 +16,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#b75cbb";
+static const char col_cyan[]        = "#ca9315";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -40,7 +40,7 @@ static const Rule rules[] = {
 
 static const char *const autostart[] = {
     "/home/liam/repos/dwm-xsetroot-status/statusbar.sh", NULL,
-    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/1_purple.jpg", "/home/liam/Images/Wallpapers/2_purple.jpg", NULL,
+    "feh", "--bg-fill", "/home/liam/Images/Wallpapers/ghibli/scenic/3.jpg", "/home/liam/Images/Wallpapers/ghibli/scenic/1.png", NULL,
     "alacritty", "-e", "cmus", NULL,
     "keepassxc", NULL,
     "thunderbird", NULL,
